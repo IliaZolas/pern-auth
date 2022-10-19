@@ -2,31 +2,34 @@
 import express from 'express';
 const router = express.Router();
 const app = express();
-import * as controller from "../controllers/todos.js";
+const cors = require("cors");
+import * as controller from "../controllers/todos";
 
-// // import { getTodo, getTodos, postTodo, deleteTodo, putTodo } from "../controllers/todos.js";
+//middleware
+app.use(cors());
+app.use(express.json()); //req.body
 
-// //ROUTES//
+//ROUTES//
 
-// //create a todo
+//create a todo
 
-// router.post("/todo", controller.postTodo);
+router.post("/todo", controller.postTodo);
 
-// //get all todos
+//get all todos
 
-// router.get("/todos", controller.getTodos);
+router.get("/todos", controller.getTodos);
 
-// //get a todo
+//get a todo
 
-// router.get("/todo/:id", controller.getTodo);
+router.get("/todo/:id", controller.getTodo);
 
-// //update a todo
+//update a todo
 
-// router.put("/todo/:id", controller.putTodo);
+router.put("/todo/:id", controller.putTodo);
 
-// //delete a todo
+//delete a todo
 
-// router.delete("/todo/:id", controller.deleteTodo);
+router.delete("/todo/:id", controller.deleteTodo);
 
 app.listen(5000, () => {
   console.log("server has started on port 5000");
@@ -34,5 +37,5 @@ app.listen(5000, () => {
 
 // module.exports = app;
 
-// // export default router;
+export default router;
 
