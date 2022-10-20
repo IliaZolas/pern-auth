@@ -31,11 +31,6 @@ router.put("/todo/:id", controller.putTodo);
 
 router.delete("/todo/:id", controller.deleteTodo);
 
-app.listen(5000, () => {
-  console.log("server has started on port 5000");
-});
-
-// module.exports = app;
 
 export default router;
 

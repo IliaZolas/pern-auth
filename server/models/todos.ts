@@ -1,4 +1,4 @@
-import pool from "../dbConfig/dbConfig.js";
+import pool from "../dbConfig/dbConfig";
 
 // app.post("/todos", async (req, res) => {
 //   try {
